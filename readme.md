@@ -1,0 +1,2 @@
+MovieApp
+A native Android app built with Kotlin for listing movies, using Jetpack Compose, Room Database, Hilt, Retrofit, and MVVM. Features a modern and smooth UI with API integration for movie details.

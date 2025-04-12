@@ -1,19 +1,19 @@
 package com.petrocini.movieapp.data.remote.api
 
 import com.petrocini.movieapp.data.remote.dto.MovieDto
-import com.petrocini.movieapp.utils.K
+import com.petrocini.movieapp.utils.TmdbApiConstants
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface MovieApiService {
 
-    @GET(K.MOVIE_ENDPOINT)
+    @GET(TmdbApiConstants.MOVIE_ENDPOINT)
     suspend fun fetchDiscoverMovie(
         @Query("api_key") apiKey: String = "",
         @Query("include_adult") includeAdult: Boolean = false
     ): MovieDto
 
-    @GET(K.TRENDING_MOVIE_ENDPOINT)
+    @GET(TmdbApiConstants.TRENDING_MOVIE_ENDPOINT)
     suspend fun fetchTrendingMovie(
         @Query("api_key") apiKey: String = "",
         @Query("include_adult") includeAdult: Boolean = false

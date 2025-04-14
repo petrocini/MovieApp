@@ -1,7 +1,7 @@
 package com.petrocini.movieapp.data.remote.repository
 
 import com.petrocini.movieapp.data.remote.api.MovieApiService
-import com.petrocini.movieapp.data.remote.dto.MovieDto
+import com.petrocini.movieapp.data.remote.dto.Result
 import com.petrocini.movieapp.data.remote.utils.ApiMapper
 import com.petrocini.movieapp.domain.models.Movie
 import com.petrocini.movieapp.domain.repository.MovieRepository
@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.flow
 
 class MovieRepositoryImpl(
     private val movieApiService: MovieApiService,
-    private val apiMapper: ApiMapper<List<Movie>, MovieDto>
+    private val apiMapper: ApiMapper<List<Movie>, Result>
 ) : MovieRepository {
     override fun fetchDiscoverMovie(): Flow<Response<List<Movie>>> = flow {
         emit(Response.Loading())

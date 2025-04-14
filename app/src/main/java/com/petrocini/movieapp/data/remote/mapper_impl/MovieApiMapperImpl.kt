@@ -1,12 +1,12 @@
 package com.petrocini.movieapp.data.remote.mapper_impl
 
-import com.petrocini.movieapp.data.remote.dto.GetMovieResponse
+import com.petrocini.movieapp.data.remote.dto.Result
 import com.petrocini.movieapp.data.remote.utils.ApiMapper
 import com.petrocini.movieapp.domain.models.Movie
 import com.petrocini.movieapp.utils.GenreConstants
 
-class MovieApiMapperImpl : ApiMapper<List<Movie>, GetMovieResponse> {
-    override fun mapToDomain(apiDto: GetMovieResponse): List<Movie> {
+class MovieApiMapperImpl : ApiMapper<List<Movie>, Result> {
+    override fun mapToDomain(apiDto: Result): List<Movie> {
         return apiDto.results?.map { result ->
             Movie(
                 backdropPath = formatEmptyValue(result?.backdropPath),
